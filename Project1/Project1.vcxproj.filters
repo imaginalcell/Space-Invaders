@@ -33,6 +33,15 @@
     <ClCompile Include="gamestate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="splashstate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pausestate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="victorystate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vec2.h">
@@ -60,6 +69,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Bullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="basestate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="splashstate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pausestate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="victorystate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

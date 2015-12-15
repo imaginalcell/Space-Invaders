@@ -4,9 +4,10 @@
 #include "Enemy.h"
 #include "partical.h"
 #include "declconst.h"
+#include "basestate.h"
 #include <vector>
 
-class GameState
+class GameState : public BaseState
 {
 public:
 	Player player;
@@ -26,10 +27,21 @@ public:
 		spawnEnemy(player.pos.x, BOUNDS_TOP);
 	}
 
+	void reset()
+	{
+		score = 0;
+		spawnDelay = 0;
+		spawnRate = 1.0f;
+		player = Player((BOUNDS_RIGHT + BOUNDS_LEFT) / 2, BOUNDS_BOTTOM);
+		bullets.clear();
+		enemies.clear();
+		particles.clear();
+	}
+
 	void update();
 	void draw();
 	void spawnBullet(float x, float y,float a_speed);
 	void spawnEnemy(float x, float y);
-	void spawnPartical(float x, float y, float a_startRadius, 
+	void spawnParticle(float x, float y, float a_startRadius, 
 						float a_endRadius, float a_lifetime, unsigned a_color);
 };

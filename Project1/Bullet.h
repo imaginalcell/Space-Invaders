@@ -12,13 +12,19 @@ public:
 	{
 		speed = a_speed;
 		if (speed > 0)
-			color = CYAN;
-		else color = WHITE;
+		{
+			sprite = plrM;
+		}
+		else
+		{
+			sprite = eMis;
+		}
 		vel.y = speed;
 	}
 	void onUpdate()
 	{
 		lifespan -= sfw::getDeltaTime();
+		radius -= sfw::getDeltaTime() * 4;
 		if (lifespan < 0) active = false;
 	}
 };

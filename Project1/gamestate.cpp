@@ -1,5 +1,6 @@
 #include "gamestate.h"
 #include <string>
+#include <fstream>
 
 void GameState::update()
 {
@@ -35,10 +36,27 @@ void GameState::update()
 	for (int i = 0; i < bullets.size(); ++i)
 		for (int j = 0; j < bullets.size(); ++j)
 			collides(bullets[i], bullets[j]);
+
+	if (appState == GAME)
+	{
+		if (!player.active)
+		{
+			std::fstream fout("scores.dat",std::ios_base::out | std::ios_base::app);
+			fout << score << std::endl;
+			fout.close();
+			
+			appState = VICTORY;
+		}
+		if (sfw::getKey('P'))
+			appState = PAUSE;
+	}
 }
 
 void GameState::draw()
 {
+	sfw::drawTexture(back, WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, WINDOW_WIDTH, WINDOW_HEIGHT);
+	sfw::drawString(font,std::to_string(score).c_str(),0,WINDOW_HEIGHT,20,20);
+
 	player.draw();
 	for (int i = 0; i < bullets.size(); ++i)
 		bullets[i].draw();
@@ -72,7 +90,7 @@ void GameState::spawnEnemy(float x, float y)
 	enemies.push_back(b);
 }
 
-void GameState::spawnPartical(float x, float y, float a_startRadius, float a_endRadius, float a_lifetime, unsigned a_color)
+void GameState::spawnParticle(float x, float y, float a_startRadius, float a_endRadius, float a_lifetime, unsigned a_color)
 {
 	Particle b(x, y, a_startRadius, a_endRadius, a_lifetime, a_color);
 

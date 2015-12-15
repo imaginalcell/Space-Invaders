@@ -5,12 +5,13 @@ class Enemy : public GameObject
 {
 public:
 	float delay, rof, trailDelay, trailRate;
+
 	Enemy(float x, float y)
 		: GameObject(x, y, 18),
 		delay(0), rof(1.2f),
 		trailDelay(0), trailRate(.2f)
 	{
-		sprite = eOne;
+		sprite = eTwo;
 		speed = 50;
 		vel.y = -speed;
 	}

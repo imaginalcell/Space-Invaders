@@ -1,5 +1,4 @@
 #pragma once
-
 #include "vec2.h"
 #include "declconst.h"
 #include "sfwdraw.h"

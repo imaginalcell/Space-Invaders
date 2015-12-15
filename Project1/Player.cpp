@@ -6,6 +6,9 @@
 void Player::onUpdate()
 {
 	vel = { 0,0 };
+	
+	
+	delay += sfw::getDeltaTime();
 	if (sfw::getKey(' ') && delay > rof)
 	{
 		delay = 0;
@@ -34,12 +37,13 @@ void Player::onCollision(GameObject & o)
 {
 	if (o.vel.y < 0)
 	{
-		health--;
+ 		health--;
 		o.active = false;
+		radius += .77;
 		switch (health)
 		{
-		case 2: color = GREEN; break;
-		case 1: color = YELLOW; break;
+		case 2: ; break;
+		case 1: ; break;
 		case 0: active = false; break;
 		}
 	}

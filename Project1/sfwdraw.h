@@ -44,6 +44,7 @@ NOTE: YOU MUST CALL initContext for any of the functions to work!
 // every 2 hexits corresponds to an 8-bit color component value.
 // look at the following values to intuit what that means.
 // In RGBA color format
+#define ORANGE   0xffA500ff
 #define WHITE	 0xffffffff
 #define BLACK    0x000000ff
 #define CYAN	 0x00ffffff

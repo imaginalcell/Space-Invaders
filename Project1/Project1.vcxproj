@@ -119,23 +119,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="basestate.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="declconst.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="gameobject.h" />
     <ClInclude Include="gamestate.h" />
     <ClInclude Include="partical.h" />
+    <ClInclude Include="pausestate.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="sfwdraw.h" />
+    <ClInclude Include="splashstate.h" />
     <ClInclude Include="vec2.h" />
+    <ClInclude Include="victorystate.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="gameobject.cpp" />
     <ClCompile Include="gamestate.cpp" />
+    <ClCompile Include="pausestate.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="splashstate.cpp" />
     <ClCompile Include="vec2.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="victorystate.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

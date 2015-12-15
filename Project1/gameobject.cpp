@@ -1,6 +1,7 @@
 #include "gameobject.h"
 #include "sfwdraw.h"
-#include "vec2.h"
+
+GameState *GameObject::gs;
 
 void GameObject::update()
 {
